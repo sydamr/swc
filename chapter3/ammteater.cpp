@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<iomanip>
 using namespace std;
 
 // Function declaration
@@ -45,7 +46,13 @@ else if (showCategory == 'E')
     showTime = "11.00 pm";
   }
 }
+else
+{
+  cout << "==============================\n";
+  cout << "Error!! Please Enter A/E only!" << endl;
+}
 
+  return 0;
 
 }
 void myFunction(double dramedyTicket, double animationTicket, double horrorTicket, string showTime, int ticketN0, char movieTypeCode, string movieType, double TotalnetPrice, double TotaltaxPrice, double pricePerTicket, double tax, double govTax)
@@ -77,6 +84,15 @@ void myFunction(double dramedyTicket, double animationTicket, double horrorTicke
     TotaltaxPrice = TotalnetPrice + govTax;
   }
 
-  cout << "===============================================" << endl;
-  cout << "Show time " << showTime << "\nMovie Type: " << movieType << "\nTicket Price: " << pricePerTicket << "\nNumber of Ticket: " << ticketN0 << "\nNet Price: " << TotalnetPrice << "\nGoverment tax: " << govTax << "\nTotal Price: " << TotaltaxPrice;
+  cout << "                AMM THEATRE\n";
+  cout << "========================================\n";
+  cout << "Show time          : " << showTime 
+       << "\nMovie Type         : " << movieType 
+       << "\nTicket Price       : RM" << fixed << setprecision(2) << pricePerTicket 
+       << "\nNumber of Ticket   : " << ticketN0 
+       << "\nNet Price          : RM" << fixed << setprecision(2) << TotalnetPrice 
+       << "\nGoverment tax      : RM" << fixed << setprecision(2) << govTax 
+       << "\nTotal Price        : RM" << fixed << setprecision(2) << TotaltaxPrice << endl
+       << "========================================\n";
+
 }
